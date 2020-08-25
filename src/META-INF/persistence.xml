@@ -3,6 +3,7 @@
   version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
   <persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
     <class>model.Todo</class>
+    <class>model.Product</class>
     <properties>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
       <property name="javax.persistence.jdbc.url"    value="jdbc:mysql://localhost/products_db?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC" />
