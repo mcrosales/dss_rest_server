@@ -45,10 +45,20 @@ public class ProductRepository {
 	}
 
 	public Product findById(Integer id) {
-		return null;
+		em = EntityManagerUtil.getEntityManager();
+		em.getTransaction().begin();
+		Product product = em.find(Product.class, id);
+		em.close();
+		return product;
 	}
 
 	public boolean delete(Integer id) {
+		em = EntityManagerUtil.getEntityManager();
+		em.getTransaction().begin();
+		Product product = em.find(Product.class, id);
+		em.remove(product);
+		em.getTransaction().commit();
+		em.close();
 		return true;
 	}
 

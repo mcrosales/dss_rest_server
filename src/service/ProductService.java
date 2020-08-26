@@ -16,16 +16,21 @@ public class ProductService {
 		this.productRepository = new ProductRepository();
 	}
 
-	public void saveProduct(Product product) {
+	public Product saveProduct(Product product) {
 		if (product.getId() == null) {
-			productRepository.create(product);
+			product = productRepository.create(product);
 		} else {
-			productRepository.update(product);
+			product = productRepository.update(product);
 		}
+		return product;
 	}
 
 	public List<Product> findAll() {
 		return productRepository.findAll();
+	}
+	
+	public boolean delete(Integer id) {
+		return productRepository.delete(id);
 	}
 
 }
