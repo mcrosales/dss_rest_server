@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import model.Product;
-import model.Todo;
 import util.EntityManagerUtil;
 
 public class ProductRepository {

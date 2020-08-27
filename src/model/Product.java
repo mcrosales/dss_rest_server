@@ -12,7 +12,7 @@ public class Product {
     private Integer id;
     private String name;
     private Double price;
-    private Boolean available;
+    private Integer quantity;
 
     @Override
     public String toString() {
@@ -43,22 +43,24 @@ public class Product {
         this.price = price;
     }
 
-    public Boolean getAvailable() {
-        return available;
+
+    public Product(Integer id, String name, Double price, Integer quantity) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.quantity = quantity;
+	}
+
+	public Product() {
     }
 
-    public void setAvailable(Boolean available) {
-        this.available = available;
-    }
+	public Integer getQuantity() {
+		return quantity;
+	}
 
-    public Product(Integer id, String name, Double price, Boolean available) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.available = available;
-    }
-
-    public Product() {
-    }
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
 
 }

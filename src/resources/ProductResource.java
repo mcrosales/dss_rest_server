@@ -19,7 +19,6 @@ import javax.ws.rs.core.Response;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import model.Product;
-import model.Todo;
 import repository.ProductRepository;
 import service.ProductService;
 
@@ -47,8 +46,16 @@ public class ProductResource {
 
 		// create new product
 		Product product = new Product();
-		product.setName("Laptop");
+		product.setName("ASUS Laptop");
 		product.setPrice(400.00);
+		productService.saveProduct(product);
+		product = new Product();
+		product.setName("The Hobbit");
+		product.setPrice(18.00);
+		productService.saveProduct(product);
+		product = new Product();
+		product.setName("AC/DC Thunderstruck");
+		product.setPrice(9.00);
 		productService.saveProduct(product);
 		return productService.findAll();
 	}
